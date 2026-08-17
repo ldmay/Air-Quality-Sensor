@@ -24,6 +24,10 @@ The number and mass concentration outputs represent distinct bins. There are fiv
 
 The circuit is relatively simple; SGP40 and BME680 sensors are connected to the ESP32 via a shared I2C bus, SPS30 via UART as recommended to prevent electromagnetic interference. I'm also running a 5V rail for the SPS30, and a 3V3 rail for everything else. 
 
+![alt text](https://github.com/ldmay/Air-Quality-Sensor/blob/main/Complete%20Breadboard%20Design.jpeg "Image of the completed breadboard design")
+
+Seen here is the working implementation of the design on a breadboard, powered by a battery pack and sending data via wifi to the web server. 
+
 # Firmware
 
 Project written in C++ using PlatformIO, using the following libraries:
@@ -39,11 +43,13 @@ lib_deps =
 
 # PCB Design
 
-I developed a full PCB design for the circuit. 
+I developed a full PCB design for the circuit using KiCAD, including schematic, PCB layout, and export to Gerber files for manufacture. 
 
-Unfortunately, some of the components require surface mounting, and I don't have the soldering equipment for that. I also realised that PCBA services are a whole lot more expensive than just printing the PCB: 
+Unfortunately, I was in for a surprise when I was about to send the design to JLCPCB and realised that PCBA fees are far higher than a simple PCB board: 
 
-So unfortunately I did not get the PCB built and wasn't able to test it. 
+![alt text](https://github.com/ldmay/Air-Quality-Sensor/blob/main/PCB/Cost%20Total.png "Total cost of getting a PCB manufactured, USD")
+
+Some of the components such as the sensors require precise surface mounting equipment for which I don't have the equipment myself, so unfortunately there was no way around this fee and I wasn't able to test the design itself. 
 
 ![alt text](https://github.com/ldmay/Air-Quality-Sensor/blob/main/PCB/3D%20PCB.png "3D View of the finished PCB design")
 
