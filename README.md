@@ -22,14 +22,11 @@ The number and mass concentration outputs represent distinct bins. There are fiv
 
 # Circuit Description
 
-Sensors are connected to the ESP32 using a shared I2C bus. 
-
+The circuit is relatively simple; SGP40 and BME680 sensors are connected to the ESP32 via a shared I2C bus, SPS30 via UART as recommended to prevent electromagnetic interference. I'm also running a 5V rail for the SPS30, and a 3V3 rail for everything else. 
 
 # Firmware
 
-Project written in C++ using PlatformIO. 
-
-I used the following libraries: 
+Project written in C++ using PlatformIO, using the following libraries:
 lib_deps = 
 	adafruit/Adafruit BME680 Library@^2.0.6
 	adafruit/Adafruit Unified Sensor
@@ -47,6 +44,8 @@ I developed a full PCB design for the circuit.
 Unfortunately, some of the components require surface mounting, and I don't have the soldering equipment for that. I also realised that PCBA services are a whole lot more expensive than just printing the PCB: 
 
 So unfortunately I did not get the PCB built and wasn't able to test it. 
+
+![alt text](https://github.com/ldmay/Air-Quality-Sensor/blob/main/PCB/3D%20PCB.png "3D View of the finished PCB design")
 
 # Results
 
